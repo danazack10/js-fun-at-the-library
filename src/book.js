@@ -39,14 +39,6 @@ function writeBook(bookTitle, bookCharacter, bookGenre){
   return book;
 }
 
-// function editBook(book){
-//   var bookPages = book.pageCount;
-//   console.log(bookPages);
-//   var editedPages = (bookPages * 0.75);
-//   console.log(editedPages);
-//   return editedPages;
-// }
-
 function editBook(book){
   book.pageCount = (book.pageCount * (0.75));
   return book.pageCount;
