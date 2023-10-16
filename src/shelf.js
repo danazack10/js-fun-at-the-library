@@ -42,20 +42,13 @@ function unshelfBook(bookTitle, shelf){
 
 // ========================================================
 
-// function listTitles(shelf){
-//   for (var i = 0; i < shelf.length; i++){
-//     var listOfTitles = []
-//     listOfTitles.push(shelf[i].title)
-//     return listOfTitles
-//   }
-// }
-// ^^NOT FUNCTIONING
-
 function listTitles(shelf){
-  return shelf[0].title + ", " + shelf[1].title + ", " + shelf[2].title;
+  var listOfTitles = []
+  for (var i = 0; i < shelf.length; i++){
+    listOfTitles.push(shelf[i].title)
+  }
+  return listOfTitles.join().replace(/,/g, ", ");
 }
-// ^^^NEEDS REFACTORING
-
 // ========================================================
 
 function searchShelf(shelf, bookTitle){
