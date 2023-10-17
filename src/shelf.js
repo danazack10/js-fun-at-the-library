@@ -8,28 +8,6 @@ function shelfBook(book, typeOfShelf){
 
 // ========================================================
 
-// function unshelfBook(bookTitle, shelf){
-//   for (var i = 0; i < shelf.length; i++){
-//    if (Object.values(shelf[i]).indexOf(bookTitle) > -1){
-//      shelf.splice(i, 1); 
-//      return shelf
-//    } else {
-//    }
-//  }
-// }
-// ^^^FUNCTIONING!!!
-
-// function unshelfBook(bookTitle, shelf){
-//    for (var i = 0; i < shelf.length; i++){
-//     if (Object.values(shelf[i]).includes(bookTitle) === true){
-//       shelf.splice(i, 1); 
-//       return shelf
-//     } else {
-//     }
-//   }
-// }
-// ^^^FUNCTIONING!!!
-
 function unshelfBook(bookTitle, shelf){
   for (var i = 0; i < shelf.length; i++){
    if (shelf[i].title === bookTitle){
@@ -52,15 +30,14 @@ function listTitles(shelf){
 // ========================================================
 
 function searchShelf(shelf, bookTitle){
+  var containsBook = [];
   for (var i = 0; i < shelf.length; i++){
-    if (Object.values(shelf[0]).includes(bookTitle) === true || Object.values(shelf[1]).includes(bookTitle) === true){
-      return true;
-    } else {
-      return false;
+    if (bookTitle === shelf[i].title){
+      containsBook.push(shelf[i]);
     }
   }
+  return containsBook.length > 0
 }
-// ^^^NEEDS REFACTORING
 
 module.exports = {
   shelfBook,
