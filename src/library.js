@@ -54,13 +54,54 @@ function checkoutBook(library, bookName, genre){
 
 // =========================================================
 
+// function takeStock(library, genre){
+//   var shelfStock = [];
+//   for (var i = 0; i < library.shelves.fantasy.length; i++)
+//     if (Object.values(library.shelves.fantasy[i]).includes(genre)) {
+//     shelfStock.concat(library.shelves.fantasy)
+//       // need to then calculate length of array and print it to console
+//     }
+//     // return length of array in interpolated string
+// }
+
+// function takeStock(library, genre){
+//   var totalBooks = [];
+//   if (Object.values(library.shelves.fantasy[0]).includes(genre)) {
+//     totalBooks.concat(library.shelves.fantasy)
+//     return `There are a total of ${totalBooks.length} books at the ${library.name}.`
+//   } else if (Object.values(library.shelves.fiction[0]).includes(genre)) {
+//     totalBooks.concat(library.shelves.fiction)
+//     return `There are a total of ${totalBooks.length} books at the ${library.name}.`
+//   } else if (Object.values(library.shelves.nonFiction[0]).includes(genre)) {
+//     totalBooks.concat(library.shelves.nonFiction)
+//     return `There are a total of ${totalBooks.length} books at the ${library.name}.`
+//   }
+// }
+
+// function takeStock(library, genre){
+//   var totalBooks = [];
+//   if (Object.values(library.shelves.fantasy[0]).includes(genre)) {
+//     return `There are a total of ${totalBooks.concat(library.shelves.fantasy).length} ${genre} books at the ${library.name}.`
+//   } else if (Object.values(library.shelves.fiction[0]).includes(genre)) {
+//     return `There are a total of ${totalBooks.concat(library.shelves.fiction).length} ${genre} books at the ${library.name}.`
+//   } else if (Object.values(library.shelves.nonFiction[0]).includes(genre)) {
+//     return `There are a total of ${totalBooks.concat(library.shelves.nonFiction).length} ${genre} books at the ${library.name}.`
+//   } else if (genre === undefined) {
+//     return `"There are a total of ${library.shelves.fantasy.concat(library.shelves.fiction).concat(library.shelves.nonFiction).length} books at the ${library.name}`
+//   }
+// }
+
 function takeStock(library, genre){
-  var shelfStock = [];
-  for (var i = 0; i < library.shelves.fantasy.length; i++)
-    if (Object.values(library.shelves.fantasy[i]).includes(genre)) {
-    // need to then calculate length of array and print it to console
-    }
-    // return length of array in interpolated string
+  var totalBooks = [];
+  if (genre === "fantasy") {
+    return `There are a total of ${library.shelves.fantasy.length} ${genre} books at the ${library.name}.`
+  } else if (genre === "fiction") {
+    return `There are a total of ${library.shelves.fiction.length} ${genre} books at the ${library.name}.`
+  } else if (genre === "nonFiction") {
+    return `There are a total of ${library.shelves.nonFiction.length} ${genre} books at the ${library.name}.`
+  } else if (genre === undefined) {
+    return `There are a total of ${library.shelves.fantasy.concat(library.shelves.fiction).concat(library.shelves.nonFiction).length} books at the ${library.name}.`
+  }
 }
 
 module.exports = {
